@@ -36,7 +36,7 @@ function Header() {
       <Container fluid="xxl" className="px-5">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Navbar.Brand>Netplix</Navbar.Brand>
+          <Navbar.Brand className="pointer" onClick={() => navigate(`/`)}>Netplix</Navbar.Brand>
           <Nav className="me-auto">
             {menu.map((el: string, i: number) => {
               const manuName = el.toLowerCase();
