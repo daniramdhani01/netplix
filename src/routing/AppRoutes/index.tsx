@@ -12,7 +12,7 @@ function AppRoutes() {
           <Route path="/" index element={<LandingPage />} />
           <Route path="/search" element={<SearchPage/>} />
           <Route path="/series" element={<div className="text-center my-5">This is series page</div>} />
-          <Route path="/movies" element={<div className="text-center my-5">This is movie page</div>} />
+          <Route path="/movies" element={<LandingPage />} />
           <Route path="/genre" element={<div className="text-center my-5">This is genre page</div>} />
           <Route path="/*" element={<Navigate to={"/"} />} />
         </Route>

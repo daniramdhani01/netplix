@@ -22,21 +22,25 @@ function LandingPage() {
   return (
     <>
       <MovieModal props={{ show, setShow, movie, setMovie }} />
+      {actionMovie.isLoading? 
+      <div className="text-center mt-5">
+        <i className="fa fa-spinner fa-spin text-primary fa-2x"></i>
+      </div>
+      :
       <Container fluid="xxl" style={{ padding: 0 }}>
         <Carousel variant="dark">
           {carouselMovie.data?.results.map((el: any, i: number) => {
             return (
               <Carousel.Item key={i}>
-                <div
-                  className="row p-5"
-                  style={{ boxSizing: "border-box" }}
-                >
+                <div className="row p-5" style={{ boxSizing: "border-box" }}>
                   <div className="col-2"></div>
-                  <div className="col-md-4 pointer" 
-                  onClick={() => {
-                    setMovie(el);
-                    setShow(true);
-                  }}>
+                  <div
+                    className="col-md-4 pointer"
+                    onClick={() => {
+                      setMovie(el);
+                      setShow(true);
+                    }}
+                  >
                     <img
                       className="d-block rounded mx-auto"
                       src={ImgAPI + el.poster_path}
@@ -46,11 +50,13 @@ function LandingPage() {
                       style={{ objectFit: "cover", objectPosition: "50% 50%" }}
                     />
                   </div>
-                  <div className="col-md-4 pointer" 
-                  onClick={() => {
-                    setMovie(el);
-                    setShow(true);
-                  }}>
+                  <div
+                    className="col-md-4 pointer"
+                    onClick={() => {
+                      setMovie(el);
+                      setShow(true);
+                    }}
+                  >
                     <span className="fs-5 fw-bold text-nowrap">{el.title}</span>
                     <p
                       className="text-ellipsis-4"
@@ -140,6 +146,7 @@ function LandingPage() {
           </div>
         </div>
       </Container>
+      }
     </>
   );
 }
