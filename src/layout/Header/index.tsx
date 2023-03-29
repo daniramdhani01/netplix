@@ -9,7 +9,7 @@ function Header() {
   const [value] = useDebounce(search, 1000);
   const navigate = useNavigate();
   const [showSticky, setShowSticky] = useState(false);
-  const location = useLocation().pathname.split("/")[1];
+  const location = useLocation().pathname?.split("/")[1];
   const line =
     "border border-white border-3 border-top-0 border-end-0 border-start-0";
   const menu = ["Series", "Movies", "Genre"];

@@ -1,5 +1,5 @@
-export const stringToDate = (string: string) => {
-  const date : string[] = string.split(/[\s,-]+/);
+export const stringToDate = (string: string= '') => {
+  const date : string[] = string?.split(/[\s,-]+/);
   const months: string[] = [
     "Jan",
     "Febr",
